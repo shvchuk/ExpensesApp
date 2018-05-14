@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import App from './components/App';
 
 const AddExpensePage = () => {
@@ -27,14 +27,23 @@ const HelpPage = () => {
     )
 }
 
+const NotFoundPage = () => {
+    return(
+        <div>
+            404!
+        </div>
+    )
+}
+
 const routes = (
     <BrowserRouter>
-        <div>
+        <Switch>
             <Route path="/" component={App} exact={true}/>
             <Route path="/create" component={ AddExpensePage } />
             <Route path="/edit" component={ EditExpensePage } />
             <Route path="/help" component={ HelpPage } />
-        </div>
+            <Route component={ NotFoundPage } />
+        </Switch>
 
     </BrowserRouter>
 );
