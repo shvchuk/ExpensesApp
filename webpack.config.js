@@ -4,8 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     entry: './src/app.js',
     output: {
-        path: path.join(__dirname, '/dist'),
-        filename: 'index_bundle.js'
+        path: path.join(__dirname, 'public'),
+        filename: 'bundle.js'
     },
     module: {
         rules: [
@@ -25,12 +25,13 @@ module.exports = {
             }
         ]
     },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: './src/index.html'
-        })
-    ],
+    // plugins: [
+    //     new HtmlWebpackPlugin({
+    //         template: './public/index.html'
+    //     })
+    // ],
     devServer: {
+        contentBase: path.join(__dirname, 'public'),
         historyApiFallback: true
     }
 }
