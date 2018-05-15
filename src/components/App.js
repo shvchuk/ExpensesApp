@@ -4,7 +4,7 @@ class App extends Component{
     render(){
         return(
             <div>
-            <h1>Expenses App!</h1>
+            <h1>Main App Page/Dashboard</h1>
         </div>
         )
     }
